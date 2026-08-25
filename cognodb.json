@@ -1,0 +1,43 @@
+{
+  "reads": {
+    "point_lookup": {
+      "p95_ms": 362.59,
+      "p50_ms": 307
+    },
+    "hop1": {
+      "p95_ms": 348.49,
+      "p50_ms": 307.27
+    },
+    "hop2": {
+      "p95_ms": 614.67,
+      "p50_ms": 307.61
+    },
+    "indexed_lookup": {
+      "p95_ms": 645.34,
+      "p50_ms": 309.05
+    },
+    "hop3": {
+      "p95_ms": 544.87,
+      "p50_ms": 306.37
+    },
+    "aggregation": {
+      "p95_ms": 1229.05,
+      "p50_ms": 1022.89
+    }
+  },
+  "mixed_sweep": [{
+    "qps": 26.3,
+    "write_ratio": 0.2,
+    "total_ops": 395,
+    "concurrency": 10,
+    "duration_s": 15
+  }],
+  "mixed": {
+    "qps": 26.3,
+    "write_ratio": 0.2,
+    "total_ops": 395,
+    "concurrency": 10,
+    "duration_s": 15
+  },
+  "target": "cognodb"
+}

@@ -1,0 +1,9 @@
+com\wexa\benchmark\LoadFalkorDB.class
+com\wexa\benchmark\Env.class
+com\wexa\benchmark\PrepareDataset.class
+com\wexa\benchmark\Queries.class
+com\wexa\benchmark\GenerateReport.class
+com\wexa\benchmark\RunBenchmark.class
+com\wexa\benchmark\LoadCypher.class
+com\wexa\benchmark\LoadFalkorDB$Command.class
+com\wexa\benchmark\LoadArangoDB.class

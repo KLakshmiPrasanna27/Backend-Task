@@ -1,0 +1,43 @@
+{
+  "reads": {
+    "point_lookup": {
+      "p95_ms": 9.01,
+      "p50_ms": 3.93
+    },
+    "hop1": {
+      "p95_ms": 7.12,
+      "p50_ms": 4.46
+    },
+    "hop2": {
+      "p95_ms": 12.21,
+      "p50_ms": 4.54
+    },
+    "indexed_lookup": {
+      "p95_ms": 9.07,
+      "p50_ms": 4.3
+    },
+    "hop3": {
+      "p95_ms": 9.03,
+      "p50_ms": 4.45
+    },
+    "aggregation": {
+      "p95_ms": 10.54,
+      "p50_ms": 5.1
+    }
+  },
+  "mixed_sweep": [{
+    "qps": 291.7,
+    "write_ratio": 0.2,
+    "total_ops": 4375,
+    "concurrency": 10,
+    "duration_s": 15
+  }],
+  "mixed": {
+    "qps": 291.7,
+    "write_ratio": 0.2,
+    "total_ops": 4375,
+    "concurrency": 10,
+    "duration_s": 15
+  },
+  "target": "arangodb"
+}

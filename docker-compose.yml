@@ -1,0 +1,71 @@
+version: "3.8"
+
+# Every service is capped to match CognoDB's free (c0) tier:
+#   0.5 vCPU / 256 MB RAM / 1 GB disk.
+
+services:
+  neo4j:
+    image: neo4j:5-community
+    container_name: bench-neo4j
+    environment:
+      - NEO4J_AUTH=neo4j/benchmarkpass
+      - NEO4J_PLUGINS=[]
+      - NEO4J_dbms_memory_heap_max__size=200m
+      - NEO4J_dbms_memory_pagecache_size=32m
+    ports:
+      - "7687:7687"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    volumes:
+      - neo4j_data:/data
+
+  memgraph:
+    image: memgraph/memgraph:latest
+    container_name: bench-memgraph
+    command: ["--memory-limit=200"]
+    ports:
+      - "7688:7687"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    volumes:
+      - memgraph_data:/var/lib/memgraph
+
+  falkordb:
+    image: falkordb/falkordb:latest
+    container_name: bench-falkordb
+    ports:
+      - "6379:6379"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    volumes:
+      - falkordb_data:/data
+
+  arangodb:
+    image: arangodb:3.11
+    container_name: bench-arangodb
+    environment:
+      - ARANGO_ROOT_PASSWORD=benchmarkpass
+    ports:
+      - "8529:8529"
+    deploy:
+      resources:
+        limits:
+          cpus: "0.5"
+          memory: 256M
+    volumes:
+      - arangodb_data:/var/lib/arangodb3
+
+volumes:
+  neo4j_data:
+  memgraph_data:
+  falkordb_data:
+  arangodb_data:
